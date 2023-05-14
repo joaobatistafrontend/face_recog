@@ -11,13 +11,13 @@ cap.set(cv2.CAP_PROP_FRAME_HEIGHT,480)
 contador = 0
 face_metch = False
 
-img_referencia = cv2.imread('eu.jpg')
+img_referencia = cv2.imread("eu.jpg")
 """vai verificar se o fame da camera é uma copia da img"""
 def check_face(frame):
     global face_metch
     try:
-        if DeepFace.verify(frame,img_referencia.copy)['verfied']:
-            print(frame.items())
+        if DeepFace.verify(frame,img_referencia.copy())['verified']:
+            print(frame.get('verified'))
 
             face_metch = True
         else:
